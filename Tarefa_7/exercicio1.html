@@ -1,0 +1,33 @@
+<SCRIPT> 
+
+function AltMaiusc () { 
+    document.TCheck.Muda.value = document.TCheck.Muda.value.toUpperCase()
+    document.TCheck.Muda2.value = document.TCheck.Muda.value.toUpperCase()
+    document.TCheck.Muda3.value = document.TCheck.Muda.value.toUpperCase()
+    document.TCheck.Opt1.checked = false 
+} 
+function AltMinusc () { 
+   document.TCheck.Muda.value = document.TCheck.Muda.value.toLowerCase()    
+   document.TCheck.Muda2.value = document.TCheck.Muda.value.toLowerCase()    
+   document.TCheck.Muda3.value = document.TCheck.Muda.value.toLowerCase()    
+   document.TCheck.Opt2.checked = false 
+} 
+</SCRIPT> 
+
+<p> 
+<form name="TCheck"> 
+Muda Case <input type=text size=20 maxlength=20 name="Muda">
+<input type=text size=20 maxlength=20 name="Muda2"> 
+<input type=text size=20 maxlength=20 name="Muda3">  </p> 
+<p> 
+Minusculo<input type=checkbox name="Opt1" value="1" checked 
+                  onclick="if (this.checked) 
+                                   { AltMinusc() } "> 
+Maiusculo<input type=checkbox name="Opt2" value="2" 
+                  onclick="if (this.checked) 
+                                   { AltMaiusc() } "> 
+<!-- Demo valor<input type=checkbox name="Opt3" 
+                    onclick="if (Opt3.checked) 
+                                     {alert ('Server recebera = ' + Opt3.value) } ">  -->
+</p> 
+</form> 

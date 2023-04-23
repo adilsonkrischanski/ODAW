@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora de Logaritmo</title>
+</head>
+<body>
+	<h1>Calculadora de Logaritmo</h1>
+	<label>Digite um número:</label>
+	<input type="number" id="numero" />
+	<button onclick="calcularLog()">Calcular Logaritmo</button>
+
+	<script>
+	function calcularLog() {
+	    const numero = document.getElementById('numero').value;
+	    const resultado = Math.log(numero);
+	    alert(`O logaritmo de ${numero} é ${resultado}`);
+	}
+	</script>
+</body>
+</html>

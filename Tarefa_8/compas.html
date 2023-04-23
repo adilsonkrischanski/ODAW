@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lista de Compras</title>
+  </head>
+  <body>
+    <h1>Minha Lista de Compras</h1>
+    <form id="form-compra">
+      <label for="input-produto">Produto:</label>
+      <input type="text" id="input-produto" name="produto">
+      <label for="input-quantidade">Quantidade:</label>
+      <input type="number" id="input-quantidade" name="quantidade">
+      <button type="submit">Adicionar</button>
+    </form>
+    <ul id="lista-compras"></ul>
+
+    <script>
+      var listaCompras = [];
+
+      function adicionarCompra(event) {
+        event.preventDefault(); 
+        
+        var inputProduto = document.getElementById("input-produto");
+        var inputQuantidade = document.getElementById("input-quantidade");
+
+        var compra = {
+          produto: inputProduto.value,
+          quantidade: inputQuantidade.value
+        };
+
+        listaCompras.push(compra);
+
+        inputProduto.value = ""; 
+        inputQuantidade.value = "";
+
+        exibirListaCompras();
+      }
+
+      function exibirListaCompras() {
+        var listaComprasElement = document.getElementById("lista-compras");
+        listaComprasElement.innerHTML = "";
+
+        listaCompras.forEach(function(compra) {
+          var itemLista = document.createElement("li");
+          itemLista.textContent = compra.quantidade + " " + compra.produto;
+          listaComprasElement.appendChild(itemLista);
+        });
+      }
+
+      var formCompra = document.getElementById("form-compra");
+      formCompra.addEventListener("submit", adicionarCompra);
+    </script>
+  </body>
+</html>

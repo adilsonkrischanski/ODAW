@@ -1,0 +1,27 @@
+
+<script> 
+
+function TestaVal() { 
+if (document.TesteSub.campo1.value == "" ||document.TesteSub.campo2.value == "" || document.TesteSub.campo3.value == ""||document.TesteSub.campo4.value == "") { 
+    alert ("Campo nao Preenchido...Form nao Submetido") 
+    return false } 
+else { 
+    alert ("Tudo Ok....Form Submetido") 
+    return true } } 
+
+</script> 
+
+<p> 
+<form method="POST" name="TesteSub" onSubmit="return TestaVal()" action="teste.html"> 
+<p> NOME 
+<input type=text size=10 maxlength=10 name="campo1" value=""></p> 
+<p> TELEFONE
+<input type=text size=10 maxlength=10 name="campo2" value=""></p> 
+<p>  EMAIL
+<input type=text size=10 maxlength=10 name="campo3" value=""></p> 
+<p>  ENDEREÇO
+<input type=text size=10 maxlength=10 name="campo4" value=""></p> 
+<p>
+<input type=submit name="Bsub" value="SEND TO SERVER"> 
+</p> 
+</form> 

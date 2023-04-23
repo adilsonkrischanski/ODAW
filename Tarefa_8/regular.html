@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Validação de E-mail com Expressões Regulares</title>
+  </head>
+  <body>
+    <h1>Validação de E-mail com Expressões Regulares</h1>
+    <form>
+      <label for="email">Endereço de E-mail:</label>
+      <input type="email" id="email" name="email">
+      <div id="email-error"></div>
+      <input type="submit" value="Enviar">
+    </form>
+    <script>
+      const emailInput = document.getElementById('email');
+      const emailError = document.getElementById('email-error');
+
+      emailInput.addEventListener('input', () => {
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Espressao regular Base para validar Email
+
+        if (emailRegex.test(email)) {
+          emailInput.classList.remove('error');
+          emailError.innerHTML = '';
+        } else {
+          emailInput.classList.add('error');
+          emailError.innerHTML = 'Endereço de e-mail inválido';
+        }
+      });
+    </script>
+  </body>
+</html>

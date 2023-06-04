@@ -1,0 +1,7 @@
+usuario1@exemplo.com:senha123
+usuario2@exemplo.com:abc456
+usuario3@exemplo.com:qwerty789
+usuario1@exemplo.com:$2y$10$yS3wTgREyDGI0AfaNlqv3OalH/zJ55bePb8BsiwJ1U8A6Ko9Skq.2
+usuario2@exemplo.com:$2y$10$g5ISI4/mxUedZDvZ3cqKPO1GvbgEhd89tTZvDUgF5Y3c4YLqTRR8K
+usuario3@exemplo.com:$2y$10$uVHm3VH3BhRHm0uBa6oHKuYmr/VUty1FbDqptWBGnYMYD3MHYj.fK
+

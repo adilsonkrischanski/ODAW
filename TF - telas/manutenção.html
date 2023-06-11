@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Manutenção</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            width: 30%;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .button-group button {
+            background-color: #ccc;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group button:hover {
+            background-color: #999;
+        }
+        
+        .part-list {
+            margin-top: 10px;
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .part-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .part-item span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Manutenção</h1>
+        <form>
+            <div class="form-group">
+                <label for="vehicle">Veículo:</label>
+                <input type="text" id="vehicle" name="vehicle" required>
+            </div>
+            <div class="form-group">
+                <label for="Km">Km:</label>
+                <input type="text" id="vehicle" name="vehicle" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mechanic">Mecânico Responsável:</label>
+                <input type="text" id="mechanic" name="mechanic" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Data:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="part">Nome da Peça:</label>
+                <input type="text" id="part" name="part">
+            </div>
+            
+            <div class="form-group">
+                <label for="quantity">Quantidade:</label>
+                <input type="number" id="quantity" name="quantity">
+            </div>
+            
+            <div class="form-group">
+                <label for="unitPrice">Preço Unitário:</label>
+                <input type="number" id="unitPrice" name="unitPrice">
+            </div>
+            
+            <button type="button" id="add-part">Adicionar Peça</button>
+            
+            <ul class="part-list"></ul>
+
+            <div class="form-group">
+                <label for="comments">Comentários:</label>
+                <textarea id="comments" name="comments" rows="5"></textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="button" style="background-color: red; color: white;">Descartar</button>
+                <button type="button" style="background-color: green; color: white;">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Adiciona um listener para o botão de adicionar peça
+        document.getElementById("add-part").addEventListener("click", function() {
+            // Obtém os valores dos campos de nome da peça, quantidade e preço unitário
+            var partName = document.getElementById("part").value;
+            var quantity = document.getElementById("quantity").value;
+            var unitPrice = document.getElementById("unitPrice").value;
+            
+            // Calcula o preço total da peça
+            var totalPrice = quantity * unitPrice;
+            
+            // Cria um elemento de lista para exibir a peça adicionada
+            var listItem = document.createElement("li");
+            listItem.classList.add("part-item");
+            
+            // Cria elementos de span para exibir o nome da peça, a quantidade, o preço unitário e o preço total
+            var partNameSpan = document.createElement("span");
+            partNameSpan.textContent = "Nome da Peça: " + partName;
+            
+            var quantitySpan = document.createElement("span");
+            quantitySpan.textContent = "Quantidade: " + quantity;
+            
+            var unitPriceSpan = document.createElement("span");
+            unitPriceSpan.textContent = "Preço Unitário: " + unitPrice;
+            
+            var totalPriceSpan = document.createElement("span");
+            totalPriceSpan.textContent = "Preço Total: " + totalPrice;
+            
+            // Adiciona os spans ao item da lista
+            listItem.appendChild(partNameSpan);
+            listItem.appendChild(quantitySpan);
+            listItem.appendChild(unitPriceSpan);
+            listItem.appendChild(totalPriceSpan);
+            
+            // Adiciona o item da lista à lista de peças
+            document.querySelector(".part-list").appendChild(listItem);
+            
+            // Limpa os campos de nome da peça, quantidade e preço unitário
+            document.getElementById("part").value = "";
+            document.getElementById("quantity").value = "";
+            document.getElementById("unitPrice").value = "";
+        });
+    </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tela de Login</title>
+    <title>Cadastro de Oficina</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,6 +37,7 @@
         }
 
         input[type="text"],
+        input[type="email"],
         input[type="password"] {
             padding: 8px;
             margin-bottom: 10px;
@@ -56,33 +57,29 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
-
-        .signup-link {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .signup-link a {
-            color: #999999;
-            text-decoration: none;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Tela de Login</h1>
-        <form action="/login" method="POST">
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required><br>
+        <h1>Cadastro de Oficina</h1>
+        <form action="/cadastro" method="POST">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj" name="cnpj" required><br>
 
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required><br>
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required><br>
 
-            <input type="submit" value="Login">
+            <label for="email">E-mail do Responsável:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required><br>
+
+            <label for="confirmar_senha">Confirmar Senha:</label>
+            <input type="password" id="confirmar_senha" name="confirmar_senha" required><br>
+
+            <input type="submit" value="Cadastrar">
         </form>
-        <div class="signup-link">
-            <a href="/signup">Cadastrar</a>
-        </div>
     </div>
 </body>
 </html>

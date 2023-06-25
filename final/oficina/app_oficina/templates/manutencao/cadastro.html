@@ -1,0 +1,69 @@
+{% extends './../pages/base.html' %}
+{% block conteudo %}
+    <div class="container mt-4">
+        <h1>Cadastro de Manutenção</h1>
+        <form>
+            <div class="form-group row">
+                <label for="vehicle" class="col-sm-2 col-form-label">Veículo:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="vehicle" name="vehicle" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Km" class="col-sm-2 col-form-label">Km:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Km" name="Km" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="mechanic" class="col-sm-2 col-form-label">Mecânico Responsável:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mechanic" name="mechanic" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="date" class="col-sm-2 col-form-label">Data:</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="part" class="col-sm-2 col-form-label">Nome da Peça:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="part" name="part">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="quantity" class="col-sm-2 col-form-label">Quantidade:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="quantity" name="quantity">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="unitPrice" class="col-sm-2 col-form-label">Preço Unitário:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="unitPrice" name="unitPrice">
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary">Adicionar Peça</button>
+
+            <ul class="list-group part-list"></ul>
+
+            <div class="form-group">
+                <label for="comments">Comentários:</label>
+                <textarea class="form-control" id="comments" name="comments" rows="5"></textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn btn-danger">Descartar</button>
+                <button type="button" class="btn btn-success">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

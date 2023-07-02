@@ -1,18 +1,7 @@
-
-{% extends './base.html'%}
-{% block conteudo%}
-<div class="container">
-    <h1>Tela de Acesso e Cadastro</h1>
-    <div class="button-group">
-        <button onclick="location.href='/filtro-mecanico'">Filtro por Mecânico</button>
-        <button onclick="location.href='/filtro-veiculo'">Filtro por Veículo</button>
-        <button onclick="location.href='/filtro-cliente'">Filtro por Cliente</button>
-    </div>
-    <div class="button-group">
-        <button onclick="location.href='/cadastrar-mecanico'">Cadastrar Mecânico</button>
-        <button onclick="location.href='/cadastrar-cliente'">Cadastrar Cliente</button>
-        <button onclick="location.href='/cadastrar-manutencao'">Cadastrar Manutenção</button>
-        <button onclick="location.href='/cadastrar-veiculo'">Cadastrar Veículo</button>
-    </div>
-</div>
+{% extends './base.html' %}
+{% block conteudo %}
+<form action="{% url 'clearDataBase' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Limpar Banco de Dados</button>
+  </form>
 {% endblock %}

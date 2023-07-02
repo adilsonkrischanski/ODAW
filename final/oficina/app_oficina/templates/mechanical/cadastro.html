@@ -1,13 +1,12 @@
 {% extends './../pages/base.html' %}
 {% block conteudo %}
 <div class="container">
-    <div class="card mt-4">
-        <div class="card-header">
-            <h1 class="text-center">Cadastro de Clientes</h1>
-        </div>
+    <div class="card">
         <div class="card-body">
-            <form action="{% url 'c_cliente' %}" method="post">
+            <h1 class="card-title">Cadastro de Mecânicos</h1>
+            <form method="post" action="{% url 'c_mecanico' %}">
                 {% csrf_token %}
+
                 <div class="form-group">
                     <label for="name">Nome:</label>
                     <input type="text" class="form-control" id="name" name="name" required>
@@ -46,6 +45,21 @@
                 <div class="form-group">
                     <label for="apartment">Apartamento:</label>
                     <input type="text" class="form-control" id="apartment" name="apartment">
+                </div>
+
+                <div class="form-group">
+                    <label for="salary">Salário:</label>
+                    <input type="number" class="form-control" id="salary" name="salary" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="workhours">Jornada:</label>
+                    <input type="text" class="form-control" id="workhours" name="workhours" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="specialty">Especialidade:</label>
+                    <input type="text" class="form-control" id="specialty" name="specialty" required>
                 </div>
 
                 <div class="button-group text-center">

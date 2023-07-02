@@ -1,0 +1,36 @@
+{% extends './../pages/base.html' %}
+{% block conteudo %}
+    <div class="container mt-4">
+        <h1>Veículos</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Proprietário</th>
+                    <th>Fabricante</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Quilometragem</th>
+                    <th>Cor</th>
+                    <th>Combustível</th>
+                    <th>Transmissão</th>
+                    <th>Placa</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for veiculo in veiculos %}
+                <tr class="{% cycle 'table-light' 'table-dark' %}">
+                    <td>{{ veiculo.owner }}</td>
+                    <td>{{ veiculo.manufacturer }}</td>
+                    <td>{{ veiculo.model }}</td>
+                    <td>{{ veiculo.year }}</td>
+                    <td>{{ veiculo.mileage }}</td>
+                    <td>{{ veiculo.color }}</td>
+                    <td>{{ veiculo.fuel }}</td>
+                    <td>{{ veiculo.transmission }}</td>
+                    <td>{{ veiculo.license_plate }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

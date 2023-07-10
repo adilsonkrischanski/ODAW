@@ -2,14 +2,6 @@
 $nome = $email = $senha = $mensagem = $sexo = $aceitoTermos = $cor = "";
 $erros = [];
 
-function criptografarSenha($senha) {
-    return $senha + 17;
-}
-
-function descriptografarSenha($senhaCriptografada ) {
-    return $senhaCriptografada - 17;
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Função para limpar e validar os dados de entrada
     function limparEntrada($dados) {

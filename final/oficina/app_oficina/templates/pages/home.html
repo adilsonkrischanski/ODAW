@@ -1,7 +1,0 @@
-{% extends './base.html' %}
-{% block conteudo %}
-<form action="{% url 'clearDataBase' %}" method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Limpar Banco de Dados</button>
-  </form>
-{% endblock %}
